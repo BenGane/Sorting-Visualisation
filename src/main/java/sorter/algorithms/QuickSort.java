@@ -37,9 +37,11 @@ public class QuickSort implements SortingAlgorithm {
                 i++;
                 if (i != j) {
                     animations.add(new Animation(j, i, true, false, -1, MIN_BAR_COLOUR, MAX_BAR_COLOUR));
+                    swap(bars, i, j);
+                    animations.add(new Animation(i, j, false, false, -1, MIN_BAR_COLOUR, MAX_BAR_COLOUR));
+                } else {
+                    animations.add(new Animation(j, j, false, false, -1, MIN_BAR_COLOUR, MAX_BAR_COLOUR));
                 }
-                swap(bars, i, j);
-                animations.add(new Animation(i, j, false, false, -1, MIN_BAR_COLOUR, MAX_BAR_COLOUR));
             } else {
                 animations.add(new Animation(j, j, false, false, -1, MIN_BAR_COLOUR, MAX_BAR_COLOUR));
             }
